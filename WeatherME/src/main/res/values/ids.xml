@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="text_view" type="id" />
+    <item name="list_view" type="id" />
+    <item name="loading_spinner" type="id" />
+    <item name="currentTempView" type="id" />
+</resources>

@@ -1,0 +1,20 @@
+# incremental data. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1378481815000 1969 00cac1cc090b90162e2c801df1f8f77565f0a788 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/UserLocationManager.class
+1378481815000 757 e69d48f3a865b6aef9538cfb79b75d82f6734280 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R.class
+1378481815000 458 3de516ad4acde79609ec7e9d2b310fd67d28f0b7 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$layout.class
+1378494336000 923 886997987c704a294fd4678235435b1d9a581080 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/DisplayWeatherActivity$1.class
+1378481815000 580 dc1e81e6027c144f11470181fb3905bd9dc473bc /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$string.class
+1378481815000 5136 f9dca340d3e8f84eab0c2fb6c2b833a4aca55352 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/PopulateDataTask.class
+1378481815000 361 f559a61445e06c3bea9f6ef3d586d4635851caf6 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/BuildConfig.class
+1377488916000 490914 3fe75433da602500cc71fcc1c46e5550291dd45d /Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/13.0.0/support-v4-13.0.0.jar
+1378481815000 364 3394cea068db328923c0db7a8f275b1bcbe43027 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$attr.class
+1378494282000 2646 1449c00c4543dd4b52edd6f61899d3c8a6d962d3 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/DisplayWeatherActivity.class
+1378492988000 2167 1f14acca600ad4b1f54dfda76e535c345323590b /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/ForecastAPIRequestObject.class
+1378481815000 455 bf632ef6046350ef91430c3bb3996d01fcd06542 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$style.class
+1378481815000 485 629e7e71435b54fdfd2298f5a7f35154d1649ec9 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$dimen.class
+1378481815000 1059 a173f26cda212bfc3e91b4b4732724909a9b7ac3 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$id.class
+1378481815000 412 c2b3718043137ae281b88d7a1ba93358f66701c2 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$menu.class
+1378481815000 1209 8c7fdf220480693eefe01aea22455c49ac593101 /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/MyData.class
+1378481815000 554 dd66e8916702e1f267b1940adc1f1940b1182c9a /Users/3digital/playground/WeatherMEProject/WeatherME/build/classes/debug/com/threedigital/weatherme/R$drawable.class

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WeatherME</string>
+    <string name="action_settings">Settings</string>
+    <string name="image">weather icon</string>
+    <string name="windMph">Large Text</string>
+    <string name="wind">Large Text</string>
+    <string name="API_KEY">eaf82b417a09d7a708e8c90225cc7926</string>
+
+</resources>

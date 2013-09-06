@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_weathermeproject" default="compile.module.weathermeproject">
+  <dirname property="module.weathermeproject.basedir" file="${ant.file.module_weathermeproject}"/>
+  
+  <property name="module.jdk.home.weathermeproject" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.weathermeproject" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.weathermeproject" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.weathermeproject" value="${compiler.args}"/>
+  
+  <property name="weathermeproject.output.dir" value="${module.weathermeproject.basedir}/build/classes/production/WeatherMEProject"/>
+  <property name="weathermeproject.testoutput.dir" value="${module.weathermeproject.basedir}/build/classes/test/WeatherMEProject"/>
+  
+  <path id="weathermeproject.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="weathermeproject.module.production.classpath">
+    <path refid="${module.jdk.classpath.weathermeproject}"/>
+  </path>
+  
+  <path id="weathermeproject.runtime.production.module.classpath">
+    <pathelement location="${weathermeproject.output.dir}"/>
+  </path>
+  
+  <path id="weathermeproject.module.classpath">
+    <path refid="${module.jdk.classpath.weathermeproject}"/>
+    <pathelement location="${weathermeproject.output.dir}"/>
+  </path>
+  
+  <path id="weathermeproject.runtime.module.classpath">
+    <pathelement location="${weathermeproject.testoutput.dir}"/>
+    <pathelement location="${weathermeproject.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.weathermeproject">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.weathermeproject">
+    <patternset refid="excluded.from.module.weathermeproject"/>
+  </patternset>
+  
+  
+  <target name="compile.module.weathermeproject" depends="compile.module.weathermeproject.production,compile.module.weathermeproject.tests" description="Compile module WeatherMEProject"/>
+  
+  <target name="compile.module.weathermeproject.production" depends="register.custom.compilers" description="Compile module WeatherMEProject; production classes"/>
+  
+  <target name="compile.module.weathermeproject.tests" depends="register.custom.compilers,compile.module.weathermeproject.production" description="compile module WeatherMEProject; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.weathermeproject" description="cleanup module">
+    <delete dir="${weathermeproject.output.dir}"/>
+    <delete dir="${weathermeproject.testoutput.dir}"/>
+  </target>
+</project>
