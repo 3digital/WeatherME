@@ -2,6 +2,7 @@ package com.threedigital.weatherme;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -45,12 +46,12 @@ public class DisplayWeatherActivity extends Activity {
 
     @Override
     public void onClick(View view) {
-        setContentView(R.layout.weather);
+//        setContentView(R.layout.weather);
 
 
-//        Intent weather = new Intent(starterService(R.layout.weather));
-//                startActivity(weather);
-//                finish();
+        Intent weather = new Intent(getApplicationContext(), weather.class);
+                startActivity(weather);
+                finish();
 
 
             }
@@ -91,9 +92,6 @@ public class DisplayWeatherActivity extends Activity {
         Log.e("Look at my data", data.getmTodaysStatus());
     }
 
-    private void listView1(String s) {
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
