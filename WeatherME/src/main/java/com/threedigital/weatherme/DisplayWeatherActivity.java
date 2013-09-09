@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -31,65 +30,60 @@ public class DisplayWeatherActivity extends Activity {
     public PopulateDataTask myFriendPopulateDataTask;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
         goGetWeatherData();
 
+
+
         ImageButton bikeButton = (ImageButton) findViewById(R.id.bikeButton);
+
         bikeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
+                intent.putExtra("temperature",String.valueOf(data.getmCurrentTemp()));
+//                intent.putExtra("Rain",String.valueOf(data.getmPercipitation()));
+                startActivity(intent);
 
-    @Override
-    public void onClick(View view) {
-//        setContentView(R.layout.weather);
-
-
-        Intent weather = new Intent(getApplicationContext(), weather.class);
-                startActivity(weather);
-                finish();
-
+                //real clear
 
             }
+        });
+        //dont let them click until i have data.
+//        bikeButton.setEnabled(false);
 
 
 
-            });
 
 
-
-    }
-
-
-
-    {
-
-
-}
-
+        }
 
     private void goGetWeatherData() {
-        myFriendPopulateDataTask = new PopulateDataTask(this);
+         myFriendPopulateDataTask = new PopulateDataTask(this);
+
+
 
     }
 
     public void receiveWeatherData(MyData data) {
+
         TextView textView = (TextView) findViewById(R.id.TempView);
         textView.setText((valueOf(data.getmCurrentTemp())));
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(valueOf(data.getmTodaysStatus()));
+//        TextView textView6 = (TextView) findViewById(R.id.textView6);
+//        textView6.setText(valueOf(data.getmCurrentTemp()));
 
-//        textView = (TextView) findViewById(R.id.TextView1);
-//        textView.setText((String.valueOf(data.getmCurrentTemp())));
 
 
 
 
         Log.e("Look at my data", data.getmTodaysStatus());
+//        bikeButton.setEnabled(true);
     }
 
 
@@ -99,6 +93,9 @@ public class DisplayWeatherActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+
+
 
 
 

@@ -5,15 +5,15 @@ package com.threedigital.weatherme;
  */
 public class MyData {
 
-    private double mCurrentTemp;
-    private double mWindSpeed;
-    private double mPercipitation;
+    private static double mCurrentTemp;
+    private static double mWindSpeed;
+    private static double mPercipitation;
     private String mTodaysStatus;
 
 
 
 
-    public double getmCurrentTemp() {
+    public static double getmCurrentTemp() {
         return mCurrentTemp;
     }
 

@@ -31,6 +31,9 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         myFriendUserLocationManager = new UserLocationManager(this);
     }
 
+     public PopulateDataTask(BikeActivity bikeActivity) {
+
+     }
 
 
      public void receiveUserLocation(Location location) {
