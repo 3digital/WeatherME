@@ -39,6 +39,8 @@ public class DisplayWeatherActivity extends Activity {
                 Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
                 intent.putExtra("temperature", String.valueOf(data.getmCurrentTemp()));
                 intent.putExtra("precipProbability",String.valueOf(data.getmPercipitation()));
+                intent.putExtra("windSpeed", String.valueOf(data.getmWindSpeed()));
+                intent.putExtra("summary", String.valueOf(data.getmTodaysStatus()));
                 startActivity(intent);
                 finish();
 

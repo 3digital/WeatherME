@@ -8,7 +8,7 @@ public class MyData {
     private static double mCurrentTemp;
     private static double mWindSpeed;
     private static double mPercipitation;
-    private  String mTodaysStatus;
+    private static String mTodaysStatus;
 
 
 
@@ -37,7 +37,7 @@ public class MyData {
         this.mPercipitation = mPercipitation;
     }
 
-    public String getmTodaysStatus() {
+    public static String getmTodaysStatus() {
         return mTodaysStatus;
     }
 
