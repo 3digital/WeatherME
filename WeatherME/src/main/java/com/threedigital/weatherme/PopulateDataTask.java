@@ -21,7 +21,7 @@ import java.io.ByteArrayOutputStream;
 public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer, MyData> {
    public DisplayWeatherActivity myFriendDisplayWeatherActivity;
      private UserLocationManager myFriendUserLocationManager;
-     private static MyData data;
+     private  MyData data;
      private Scheme mTodaysStatus;
 
      public PopulateDataTask(DisplayWeatherActivity activity) {
@@ -29,11 +29,11 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         super();
         myFriendDisplayWeatherActivity = activity;
         myFriendUserLocationManager = new UserLocationManager(this);
-    }
-
-     public PopulateDataTask(BikeActivity bikeActivity) {
-
      }
+
+//     public PopulateDataTask(BikeActivity bikeActivity) {
+//
+//     }
 
 
      public void receiveUserLocation(Location location) {
@@ -82,7 +82,9 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
 
 
 
-        return data;//return a MyData object
+
+
+        return data;
     }
 
     @Override
@@ -103,11 +105,6 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
 
      }
 
-
-     public static void goGetWeatherData() {
-
-
-     }
 
      public Scheme getmTodaysStatus() {
          return mTodaysStatus;

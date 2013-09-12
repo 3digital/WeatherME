@@ -8,7 +8,7 @@ public class MyData {
     private static double mCurrentTemp;
     private static double mWindSpeed;
     private static double mPercipitation;
-    private String mTodaysStatus;
+    private  String mTodaysStatus;
 
 
 
@@ -21,7 +21,7 @@ public class MyData {
         this.mCurrentTemp = mCurrentTemp;
     }
 
-    public double getmWindSpeed() {
+    public static double getmWindSpeed() {
         return mWindSpeed;
     }
 
@@ -29,7 +29,7 @@ public class MyData {
         this.mWindSpeed = mWindSpeed;
     }
 
-    public double getmPercipitation() {
+    public static double getmPercipitation() {
         return mPercipitation;
     }
 

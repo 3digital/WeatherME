@@ -7,18 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import static java.lang.String.valueOf;
 
 public class DisplayWeatherActivity extends Activity {
     public ImageButton bikeButton;
-    public Button updatebutton;
-    public ListView listView;
     public TextView textView;
     public ImageView imageView;
     public TextView textView2;
@@ -33,23 +27,22 @@ public class DisplayWeatherActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         goGetWeatherData();
 
 
 
         ImageButton bikeButton = (ImageButton) findViewById(R.id.bikeButton);
-
         bikeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
-                intent.putExtra("temperature",String.valueOf(data.getmCurrentTemp()));
-//                intent.putExtra("Rain",String.valueOf(data.getmPercipitation()));
+                intent.putExtra("temperature", String.valueOf(data.getmCurrentTemp()));
+                intent.putExtra("precipProbability",String.valueOf(data.getmPercipitation()));
                 startActivity(intent);
+                finish();
 
-                //real clear
+
 
             }
         });
@@ -63,7 +56,7 @@ public class DisplayWeatherActivity extends Activity {
         }
 
     private void goGetWeatherData() {
-         myFriendPopulateDataTask = new PopulateDataTask(this);
+        myFriendPopulateDataTask = new PopulateDataTask(this);
 
 
 
@@ -72,11 +65,9 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData(MyData data) {
 
         TextView textView = (TextView) findViewById(R.id.TempView);
-        textView.setText((valueOf(data.getmCurrentTemp())));
+        textView.setText(String.valueOf(data.getmCurrentTemp()));
         TextView textView2 = (TextView) findViewById(R.id.textView2);
-        textView2.setText(valueOf(data.getmTodaysStatus()));
-//        TextView textView6 = (TextView) findViewById(R.id.textView6);
-//        textView6.setText(valueOf(data.getmCurrentTemp()));
+        textView2.setText(String.valueOf(data.getmTodaysStatus()));
 
 
 

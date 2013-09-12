@@ -33,10 +33,6 @@ public class UserLocationManager implements LocationListener {
     }
 
 
-
-
-
-
     @Override
     public void onLocationChanged(Location loc) {
 
