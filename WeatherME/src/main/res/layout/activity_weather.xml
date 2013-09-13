@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bikebackground"
+    android:background="@drawable/xsky"
     tools:context=".MainActivity"
     android:baselineAligned="false">
 
@@ -13,6 +13,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="@drawable/cloudsky"
         android:layout_weight="1">
 
         <TextView
@@ -32,9 +33,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Rain"
             android:id="@+id/textView2"
-            android:layout_marginTop="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/textView" />
+            android:layout_alignLeft="@+id/textView"
+            android:layout_below="@+id/TextView2"
+            android:layout_alignRight="@+id/textView3" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Biking Today..."
+            android:text="Biking Forecast..."
             android:id="@+id/textView4"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/textView3"

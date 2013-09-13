@@ -36,11 +36,11 @@ public class DisplayWeatherActivity extends Activity {
         bikeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
-                intent.putExtra("temperature", String.valueOf(data.getmCurrentTemp()));
-                intent.putExtra("precipProbability",String.valueOf(data.getmPercipitation()));
-                intent.putExtra("windSpeed", String.valueOf(data.getmWindSpeed()));
-                intent.putExtra("summary", String.valueOf(data.getmTodaysStatus()));
+            Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
+            intent.putExtra("temperature", String.valueOf(data.getmCurrentTemp()));
+            intent.putExtra("precipProbability",String.valueOf(data.getmPercipitation()));
+            intent.putExtra("windSpeed", String.valueOf(data.getmWindSpeed()));
+            intent.putExtra("summary", String.valueOf(data.getmTodaysStatus()));
                 startActivity(intent);
                 finish();
 
@@ -50,9 +50,6 @@ public class DisplayWeatherActivity extends Activity {
         });
         //dont let them click until i have data.
 //        bikeButton.setEnabled(false);
-
-
-
 
 
         }
@@ -73,11 +70,11 @@ public class DisplayWeatherActivity extends Activity {
 
 
 
-
-
         Log.e("Look at my data", data.getmTodaysStatus());
-//        bikeButton.setEnabled(true);
+//       bikeButton.setEnabled(true);
     }
+
+
 
 
     @Override
