@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -37,14 +37,13 @@
         android:layout_centerHorizontal="true" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/bikeButton"
         android:onClick="true"
         android:background="@drawable/auto"
-        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/TempImageView"
-        android:layout_marginBottom="14dp" />
+        android:layout_below="@+id/TempImageView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,10 +60,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
         android:id="@+id/textView2"
         android:layout_alignBottom="@+id/TempImageView"
-        android:layout_toRightOf="@+id/TempImageView" />
+        android:layout_toRightOf="@+id/TempImageView"
+        android:textColor="#040404" />
 
 
 </RelativeLayout>
