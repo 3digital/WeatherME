@@ -8,7 +8,6 @@ import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
@@ -22,7 +21,7 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
    public DisplayWeatherActivity myFriendDisplayWeatherActivity;
      private UserLocationManager myFriendUserLocationManager;
      private  MyData data;
-     private Scheme mTodaysStatus;
+
 
      public PopulateDataTask(DisplayWeatherActivity activity) {
         //This is the constructor.
@@ -30,10 +29,6 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         myFriendDisplayWeatherActivity = activity;
         myFriendUserLocationManager = new UserLocationManager(this);
      }
-
-//     public PopulateDataTask(BikeActivity bikeActivity) {
-//
-//     }
 
 
      public void receiveUserLocation(Location location) {
@@ -105,10 +100,6 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
 
      }
 
-
-     public Scheme getmTodaysStatus() {
-         return mTodaysStatus;
-     }
 
      public MyData getData() {
          return data;

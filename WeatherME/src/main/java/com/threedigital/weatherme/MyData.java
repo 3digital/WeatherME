@@ -5,35 +5,37 @@ package com.threedigital.weatherme;
  */
 public class MyData {
 
-    private static double mCurrentTemp;
-    private static double mWindSpeed;
-    private static double mPercipitation;
+    private static Double mCurrentTemp;
+    private static Double mWindSpeed;
+    private static Double mPercipitation;
     private static String mTodaysStatus;
+   
 
 
 
 
-    public static double getmCurrentTemp() {
+
+    public static Double getmCurrentTemp() {
         return mCurrentTemp;
     }
 
-    public void setmCurrentTemp(double mCurrentTemp) {
+    public void setmCurrentTemp(Double mCurrentTemp) {
         this.mCurrentTemp = mCurrentTemp;
     }
 
-    public static double getmWindSpeed() {
+    public static Double getmWindSpeed() {
         return mWindSpeed;
     }
 
-    public void setmWindSpeed(double mWindSpeed) {
+    public void setmWindSpeed(Double mWindSpeed) {
         this.mWindSpeed = mWindSpeed;
     }
 
-    public static double getmPercipitation() {
+    public static Double getmPercipitation() {
         return mPercipitation;
     }
 
-    public void setmPercipitation(double mPercipitation) {
+    public void setmPercipitation(Double mPercipitation) {
         this.mPercipitation = mPercipitation;
     }
 
@@ -43,6 +45,11 @@ public class MyData {
 
     public void setmTodaysStatus(String mTodaysStatus) {
         this.mTodaysStatus = mTodaysStatus;
+    }
+
+    private String FormatTemp(String input) {
+        return input.substring(0, input.indexOf('.')) + "\u00B0";
+
     }
 
 

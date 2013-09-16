@@ -26,7 +26,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="16dp"
-            android:textColor="#040404" />
+            android:textColor="#f8f8f8" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_below="@+id/TextView2"
             android:layout_alignRight="@+id/textView3"
             android:editable="false"
-            android:textColor="#040404" />
+            android:textColor="#f9f9f9" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
             android:layout_marginTop="14dp"
             android:layout_below="@+id/textView"
             android:layout_alignLeft="@+id/textView"
-            android:textColor="#040404" />
+            android:textColor="#f9f9f9" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,7 +80,8 @@
             android:id="@+id/TextView3"
             android:layout_alignTop="@+id/textView3"
             android:layout_alignRight="@+id/editText2"
-            android:layout_toRightOf="@+id/textView4" />
+            android:layout_toRightOf="@+id/textView4"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,7 +101,7 @@
             android:id="@+id/textView5"
             android:layout_above="@+id/textView"
             android:layout_alignRight="@+id/TextView2"
-            android:textColor="#040404" />
+            android:textColor="#fbfbfb" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -109,7 +110,7 @@
             android:id="@+id/textView6"
             android:layout_above="@+id/textView3"
             android:layout_alignRight="@+id/TextView3"
-            android:textColor="#040404" />
+            android:textColor="#f7f7f7" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,7 +119,7 @@
             android:id="@+id/textView7"
             android:layout_alignTop="@+id/TextView3"
             android:layout_alignRight="@+id/TextView3"
-            android:textColor="#040404" />
+            android:textColor="#fefefe" />
 
         <TextView
             android:layout_width="wrap_content"

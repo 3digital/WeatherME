@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WeatherME</string>
+    <string name="app_name">Weather ME</string>
     <string name="action_settings">Settings</string>
     <string name="image">weather icon</string>
     <string name="windMph">Large Text</string>

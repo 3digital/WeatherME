@@ -9,7 +9,7 @@ import android.os.Bundle;
 /**
  * Created by 3digital on 8/30/13.
  */
-public class UserLocationManager implements LocationListener {
+public class UserLocationManager extends DisplayWeatherActivity implements LocationListener {
 
     private DisplayWeatherActivity myFriendDisplayActivity;
     private PopulateDataTask myFriendPopulateDataTask;
@@ -18,11 +18,14 @@ public class UserLocationManager implements LocationListener {
 //        myWeatherDisplayActivity = a;
 
 
-    public UserLocationManager (PopulateDataTask x){
+    public UserLocationManager(PopulateDataTask x){
         myFriendPopulateDataTask = x;
-        lm =  (LocationManager)myFriendPopulateDataTask.myFriendDisplayWeatherActivity.getSystemService(Context.LOCATION_SERVICE);
+        lm = (LocationManager)myFriendPopulateDataTask.myFriendDisplayWeatherActivity.getSystemService(Context.LOCATION_SERVICE);
+
         try {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,0 , 0, this);
+//            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0, 0, this);
+            lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
 
         }catch (Exception e) {
@@ -30,7 +33,9 @@ public class UserLocationManager implements LocationListener {
 
 
         }
+
     }
+
 
 
     @Override
@@ -43,17 +48,17 @@ public class UserLocationManager implements LocationListener {
     }
 
     @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) {
+    public void onStatusChanged(String provider, int status, Bundle extras) {
 
     }
 
     @Override
-    public void onProviderEnabled(String s) {
+    public void onProviderEnabled(String provider) {
 
     }
 
     @Override
-    public void onProviderDisabled(String s) {
+    public void onProviderDisabled(String provider) {
 
     }
 

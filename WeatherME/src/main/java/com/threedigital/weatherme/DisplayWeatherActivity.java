@@ -54,6 +54,7 @@ public class DisplayWeatherActivity extends Activity {
 
         }
 
+
     private void goGetWeatherData() {
         myFriendPopulateDataTask = new PopulateDataTask(this);
 
@@ -67,6 +68,8 @@ public class DisplayWeatherActivity extends Activity {
         textView.setText(String.valueOf(data.getmCurrentTemp()));
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(String.valueOf(data.getmTodaysStatus()));
+//        ImageView imageView1 = (ImageView) findViewById(R.id.TempImageView);
+//        imageView1.setImageAlpha(setFeatureDrawableAlpha());
 
 
 
@@ -75,17 +78,12 @@ public class DisplayWeatherActivity extends Activity {
     }
 
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
-
-
 
 
 

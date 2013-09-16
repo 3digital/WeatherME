@@ -7,15 +7,17 @@ import android.location.Location;
  */
 public class ForecastAPIRequestObject {
 
-    private Double mLatitude;
-    private Double mLongitude;
+    private static Double mLatitude;
+    private static Double mLongitude;
     private String mURL ="https://api.forecast.io/forecast/";
+//    private static String API_URL = "http://api.geonames.org/findNearbyPlaceNameJSON?";
     private String mAPI_KEY="eaf82b417a09d7a708e8c90225cc7926";
-    private Location myLocation;
+    private static Location myLocation;
 
     public ForecastAPIRequestObject(Location myLocation) {
         this.setMyLocation(myLocation);
     }
+
 
     public void setMyLocation(Location myLocation) {
         this.myLocation = myLocation;
@@ -60,7 +62,7 @@ public class ForecastAPIRequestObject {
         this.mAPI_KEY = mAPI_KEY;
     }
 
-    public void execute(Location location) {
+    public void execute(String location) {
 
     }
 }
