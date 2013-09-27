@@ -53,6 +53,8 @@ public class MyData {
     }
 
 
-
+    public char[] setmTodaysStatus() {
+        return new char[0];
+    }
 }
 

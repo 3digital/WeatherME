@@ -24,7 +24,7 @@ public class UserLocationManager extends DisplayWeatherActivity implements Locat
 
         try {
             lm.requestLocationUpdates(LocationManager.GPS_PROVIDER,0 , 0, this);
-//            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0, 0, this);
+            lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0, 0, this);
             lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
 

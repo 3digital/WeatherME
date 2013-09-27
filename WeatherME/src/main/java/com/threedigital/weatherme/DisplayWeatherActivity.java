@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class DisplayWeatherActivity extends Activity {
     public ImageButton bikeButton;
     public TextView textView;
-    public ImageView imageView;
+    public ImageView TempImageView;
     public TextView textView2;
     public MyData data;
 
@@ -30,19 +30,26 @@ public class DisplayWeatherActivity extends Activity {
         setContentView(R.layout.activity_main);
         goGetWeatherData();
 
+        int[] Images = new int[]{
 
+            R.drawable.mostlycloudy, R.drawable.windy,
+            R.drawable.mostlysunny,R.drawable.overcast,
+            R.drawable.thundershowers,
+        };
+
+//        TempImageView.setImageDrawable(Images);
 
         ImageButton bikeButton = (ImageButton) findViewById(R.id.bikeButton);
         bikeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
-            intent.putExtra("temperature", String.valueOf(data.getmCurrentTemp()));
-            intent.putExtra("precipProbability",String.valueOf(data.getmPercipitation()));
-            intent.putExtra("windSpeed", String.valueOf(data.getmWindSpeed()));
+            intent.putExtra("temperature", String.valueOf(Math.round(Double.valueOf(data.getmCurrentTemp())) + "\u00b0"));
+            intent.putExtra("precipProbability",String.valueOf(Math.round(Double.valueOf(data.getmPercipitation())) + "\u00b0"));
+            intent.putExtra("windSpeed", String.valueOf(Math.round(Double.valueOf(data.getmWindSpeed()))));
             intent.putExtra("summary", String.valueOf(data.getmTodaysStatus()));
                 startActivity(intent);
-                finish();
+
 
 
 
@@ -65,11 +72,11 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData(MyData data) {
 
         TextView textView = (TextView) findViewById(R.id.TempView);
-        textView.setText(String.valueOf(data.getmCurrentTemp()));
+        textView.setText(String.valueOf(Math.round(Double.valueOf(data.getmCurrentTemp())) + "\u00b0"));
+
+       
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(String.valueOf(data.getmTodaysStatus()));
-//        ImageView imageView1 = (ImageView) findViewById(R.id.TempImageView);
-//        imageView1.setImageAlpha(setFeatureDrawableAlpha());
 
 
 
