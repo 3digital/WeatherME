@@ -3,6 +3,7 @@ package com.threedigital.weatherme;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -30,14 +31,7 @@ public class DisplayWeatherActivity extends Activity {
         setContentView(R.layout.activity_main);
         goGetWeatherData();
 
-        int[] Images = new int[]{
 
-            R.drawable.mostlycloudy, R.drawable.windy,
-            R.drawable.mostlysunny,R.drawable.overcast,
-            R.drawable.thundershowers,
-        };
-
-//        TempImageView.setImageDrawable(Images);
 
         ImageButton bikeButton = (ImageButton) findViewById(R.id.bikeButton);
         bikeButton.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +39,7 @@ public class DisplayWeatherActivity extends Activity {
             public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
             intent.putExtra("temperature", String.valueOf(Math.round(Double.valueOf(data.getmCurrentTemp())) + "\u00b0"));
-            intent.putExtra("precipProbability",String.valueOf(Math.round(Double.valueOf(data.getmPercipitation())) + "\u00b0"));
+            intent.putExtra("precipProbability",String.valueOf(Math.round(Double.valueOf(data.getmPercipitation())) + "%"));
             intent.putExtra("windSpeed", String.valueOf(Math.round(Double.valueOf(data.getmWindSpeed()))));
             intent.putExtra("summary", String.valueOf(data.getmTodaysStatus()));
                 startActivity(intent);
@@ -60,6 +54,36 @@ public class DisplayWeatherActivity extends Activity {
 
 
         }
+
+
+    public Drawable findIcon(String input) {
+        Drawable d;
+        if(input.equals("clear-day")) {
+            d = getResources().getDrawable(R.drawable.sunny);
+        }else if(input.equals("clear-night")) {
+            d = getResources().getDrawable(R.drawable.clear_night);
+        }else if(input.equals("rain")) {
+            d = getResources().getDrawable(R.drawable.rain);
+        }else if(input.equals("snow")) {
+            d = getResources().getDrawable(R.drawable.flurries);
+        }else if(input.equals("sleet")) {
+            d = getResources().getDrawable(R.drawable.sleet);
+        }else if(input.equals("wind")) {
+            d = getResources().getDrawable(R.drawable.windy);
+        }else if(input.equals("fog")) {
+            d = getResources().getDrawable(R.drawable.foggy);
+        }else if(input.equals("cloudy")) {
+            d = getResources().getDrawable(R.drawable.cloudy);
+        }else if(input.equals("partly-cloudy-day")) {
+            d = getResources().getDrawable(R.drawable.mostlycloudy);
+        }else if(input.equals("partly-cloudy-night")) {
+            d = getResources().getDrawable(R.drawable.partly_cloudy_night);
+        }else {
+            d = getResources().getDrawable(R.drawable.overcast);
+        }
+        return d;
+    }
+
 
 
     private void goGetWeatherData() {
@@ -83,6 +107,7 @@ public class DisplayWeatherActivity extends Activity {
         Log.e("Look at my data", data.getmTodaysStatus());
 //       bikeButton.setEnabled(true);
     }
+
 
 
     @Override

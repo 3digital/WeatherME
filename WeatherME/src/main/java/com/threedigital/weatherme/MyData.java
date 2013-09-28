@@ -47,10 +47,7 @@ public class MyData {
         this.mTodaysStatus = mTodaysStatus;
     }
 
-    private String FormatTemp(String input) {
-        return input.substring(0, input.indexOf('.')) + "\u00B0";
 
-    }
 
 
     public char[] setmTodaysStatus() {
