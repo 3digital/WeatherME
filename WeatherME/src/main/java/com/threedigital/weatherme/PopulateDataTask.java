@@ -19,7 +19,6 @@ import java.io.ByteArrayOutputStream;
  */
 public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer, MyData> {
    public DisplayWeatherActivity myFriendDisplayWeatherActivity;
-     private UserLocationManager myFriendUserLocationManager;
      private  MyData data;
 
 
@@ -27,7 +26,7 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         //This is the constructor.
         super();
         myFriendDisplayWeatherActivity = activity;
-        myFriendUserLocationManager = new UserLocationManager(this);
+         UserLocationManager myFriendUserLocationManager = new UserLocationManager(this);
      }
 
 
@@ -58,11 +57,12 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
                 JSONObject currentlyJSON = rootJSON.getJSONObject("currently");
                 Double windSpeed = currentlyJSON.getDouble("windSpeed");
 
-
+//                data.setmIcon(currentlyJSON.getJSONObject("icon"));
                 data.setmWindSpeed(currentlyJSON.getDouble("windSpeed"));
                 data.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
                 data.setmPercipitation(currentlyJSON.getDouble("precipProbability"));
                 data.setmTodaysStatus(currentlyJSON.getString("summary"));
+                
 
                 //Parse the data from the api using JSONObject methods
                 //and put the data in the MyData object
@@ -82,6 +82,7 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         return data;
     }
 
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -92,6 +93,7 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         //get the result of doInBackground as a MyData object
         super.onPostExecute(data);
         myFriendDisplayWeatherActivity.receiveWeatherData(data);
+
     }
 
     @Override

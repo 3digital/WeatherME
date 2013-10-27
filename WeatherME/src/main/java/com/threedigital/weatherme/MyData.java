@@ -9,10 +9,7 @@ public class MyData {
     private static Double mWindSpeed;
     private static Double mPercipitation;
     private static String mTodaysStatus;
-   
-
-
-
+    private static Object mIcon;
 
 
     public static Double getmCurrentTemp() {
@@ -52,6 +49,14 @@ public class MyData {
 
     public char[] setmTodaysStatus() {
         return new char[0];
+    }
+
+    public void setmIcon(Object mIcon) {
+        this.mIcon = mIcon;
+    }
+
+    public Object getmIcon() {
+        return mIcon;
     }
 }
 

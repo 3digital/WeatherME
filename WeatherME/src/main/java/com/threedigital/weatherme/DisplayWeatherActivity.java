@@ -45,12 +45,10 @@ public class DisplayWeatherActivity extends Activity {
                 startActivity(intent);
 
 
-
-
             }
         });
-        //dont let them click until i have data.
 //        bikeButton.setEnabled(false);
+
 
 
         }
@@ -79,7 +77,7 @@ public class DisplayWeatherActivity extends Activity {
         }else if(input.equals("partly-cloudy-night")) {
             d = getResources().getDrawable(R.drawable.partly_cloudy_night);
         }else {
-            d = getResources().getDrawable(R.drawable.overcast);
+            d = getResources().getDrawable(R.drawable.clear);
         }
         return d;
     }
@@ -91,6 +89,7 @@ public class DisplayWeatherActivity extends Activity {
 
 
 
+
     }
 
     public void receiveWeatherData(MyData data) {
@@ -98,15 +97,20 @@ public class DisplayWeatherActivity extends Activity {
         TextView textView = (TextView) findViewById(R.id.TempView);
         textView.setText(String.valueOf(Math.round(Double.valueOf(data.getmCurrentTemp())) + "\u00b0"));
 
-       
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(String.valueOf(data.getmTodaysStatus()));
 
+//        findViewById(R.id.TempImageView);
+//        TempImageView.setImageDrawable(Drawable.createFromPath(String.valueOf(data.getmIcon)));
+
+//        bikeButton.setEnabled(true);
 
 
         Log.e("Look at my data", data.getmTodaysStatus());
-//       bikeButton.setEnabled(true);
+
     }
+
+
 
 
 
@@ -116,7 +120,6 @@ public class DisplayWeatherActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
 
 
 }

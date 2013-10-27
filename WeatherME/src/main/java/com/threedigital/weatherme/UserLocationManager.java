@@ -35,6 +35,7 @@ public class UserLocationManager extends DisplayWeatherActivity implements Locat
 
         }
 
+
     }
 
 

@@ -10,9 +10,7 @@ public class ForecastAPIRequestObject {
     private static Double mLatitude;
     private static Double mLongitude;
     private String mURL ="https://api.forecast.io/forecast/";
-//    private static String API_URL = "http://api.geonames.org/findNearbyPlaceNameJSON?";
     private String mAPI_KEY="eaf82b417a09d7a708e8c90225cc7926";
-    private static Location myLocation;
 
     public ForecastAPIRequestObject(Location myLocation) {
         this.setMyLocation(myLocation);
@@ -20,7 +18,6 @@ public class ForecastAPIRequestObject {
 
 
     public void setMyLocation(Location myLocation) {
-        this.myLocation = myLocation;
         mLatitude = myLocation.getLatitude();
         mLongitude = myLocation.getLongitude();
     }
@@ -64,6 +61,11 @@ public class ForecastAPIRequestObject {
 
     public void execute(String location) {
 
+    }
+
+    public String getAPI_GEONAMES_USERNAME() {
+        String API_GEONAMES_USERNAME = "3digital";
+        return API_GEONAMES_USERNAME;
     }
 }
 
