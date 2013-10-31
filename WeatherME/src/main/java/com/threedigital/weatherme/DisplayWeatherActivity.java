@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.threedigital.weatherme.MyData.getmTodaysStatus;
+
 public class DisplayWeatherActivity extends Activity {
     public ImageButton bikeButton;
     public TextView textView;
@@ -38,10 +40,10 @@ public class DisplayWeatherActivity extends Activity {
             @Override
             public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), BikeActivity.class);
-            intent.putExtra("temperature", String.valueOf(Math.round(Double.valueOf(data.getmCurrentTemp())) + "\u00b0"));
-            intent.putExtra("precipProbability",String.valueOf(Math.round(Double.valueOf(data.getmPercipitation())) + "%"));
-            intent.putExtra("windSpeed", String.valueOf(Math.round(Double.valueOf(data.getmWindSpeed()))));
-            intent.putExtra("summary", String.valueOf(data.getmTodaysStatus()));
+            intent.putExtra("temperature", String.valueOf(Math.round(MyData.getmCurrentTemp()) + "\u00b0"));
+            intent.putExtra("precipProbability",String.valueOf(Math.round(MyData.getmPercipitation()) + "%"));
+            intent.putExtra("windSpeed", String.valueOf(Math.round(MyData.getmWindSpeed())));
+            intent.putExtra("summary", String.valueOf(getmTodaysStatus()));
                 startActivity(intent);
 
 
@@ -95,10 +97,10 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData(MyData data) {
 
         TextView textView = (TextView) findViewById(R.id.TempView);
-        textView.setText(String.valueOf(Math.round(Double.valueOf(data.getmCurrentTemp())) + "\u00b0"));
+        textView.setText(String.valueOf(Math.round(MyData.getmCurrentTemp()) + "\u00b0"));
 
         TextView textView2 = (TextView) findViewById(R.id.textView2);
-        textView2.setText(String.valueOf(data.getmTodaysStatus()));
+        textView2.setText(String.valueOf(getmTodaysStatus()));
 
 //        findViewById(R.id.TempImageView);
 //        TempImageView.setImageDrawable(Drawable.createFromPath(String.valueOf(data.getmIcon)));
@@ -106,7 +108,7 @@ public class DisplayWeatherActivity extends Activity {
 //        bikeButton.setEnabled(true);
 
 
-        Log.e("Look at my data", data.getmTodaysStatus());
+        Log.e("Look at my data", getmTodaysStatus());
 
     }
 

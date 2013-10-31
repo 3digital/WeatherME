@@ -1,5 +1,6 @@
 package com.threedigital.weatherme;
 
+import android.app.WallpaperManager;
 import android.location.Location;
 
 /**
@@ -11,6 +12,7 @@ public class ForecastAPIRequestObject {
     private static Double mLongitude;
     private String mURL ="https://api.forecast.io/forecast/";
     private String mAPI_KEY="eaf82b417a09d7a708e8c90225cc7926";
+    private WallpaperManager resources;
 
     public ForecastAPIRequestObject(Location myLocation) {
         this.setMyLocation(myLocation);
@@ -66,6 +68,12 @@ public class ForecastAPIRequestObject {
     public String getAPI_GEONAMES_USERNAME() {
         String API_GEONAMES_USERNAME = "3digital";
         return API_GEONAMES_USERNAME;
+    }
+
+
+
+    public WallpaperManager getResources() {
+        return resources;
     }
 }
 

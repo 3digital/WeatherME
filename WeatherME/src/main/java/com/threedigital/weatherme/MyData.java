@@ -1,5 +1,7 @@
 package com.threedigital.weatherme;
 
+import android.app.WallpaperManager;
+
 /**
  * Created by 3digital on 9/6/13.
  */
@@ -10,6 +12,7 @@ public class MyData {
     private static Double mPercipitation;
     private static String mTodaysStatus;
     private static Object mIcon;
+    private WallpaperManager resources;
 
 
     public static Double getmCurrentTemp() {
@@ -51,12 +54,19 @@ public class MyData {
         return new char[0];
     }
 
+
+
+
     public void setmIcon(Object mIcon) {
         this.mIcon = mIcon;
     }
 
     public Object getmIcon() {
         return mIcon;
+    }
+
+    public WallpaperManager getResources() {
+        return resources;
     }
 }
 

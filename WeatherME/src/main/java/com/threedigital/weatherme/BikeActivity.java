@@ -24,6 +24,7 @@ public class BikeActivity extends Activity {
         TextView textView5 = (TextView) findViewById(R.id.textView5);
         TextView textView7 = (TextView) findViewById(R.id.textView7);
         TextView textView8 = (TextView) findViewById(R.id.textView8);
+
         if (extras != null) {
             textView6.setText(extras.getString("temperature"));
             textView5.setText(extras.getString("precipProbability"));
