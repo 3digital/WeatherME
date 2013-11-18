@@ -1,7 +1,6 @@
 package com.threedigital.weatherme;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -19,7 +18,7 @@ public class UserLocationManager extends DisplayWeatherActivity implements Locat
 //        myWeatherDisplayActivity = a;
 
 
-    public UserLocationManager(PopulateDataTask x){
+    public UserLocationManager(DisplayWeatherActivity myFriendDisplayActivity, PopulateDataTask x){
         myFriendPopulateDataTask = x;
         lm = (LocationManager)myFriendPopulateDataTask.myFriendDisplayWeatherActivity.getSystemService(Context.LOCATION_SERVICE);
 
@@ -65,9 +64,5 @@ public class UserLocationManager extends DisplayWeatherActivity implements Locat
     }
 
 
-    @Override
-    public Drawable findIcon(String input) {
-        return super.findIcon(input);
-    }
 }
 

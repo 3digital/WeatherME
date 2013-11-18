@@ -14,7 +14,8 @@ public class ForecastAPIRequestObject {
     private String mAPI_KEY="eaf82b417a09d7a708e8c90225cc7926";
     private WallpaperManager resources;
 
-    public ForecastAPIRequestObject(Location myLocation) {
+    public ForecastAPIRequestObject(Location myLocation, WallpaperManager resources) {
+        this.resources = resources;
         this.setMyLocation(myLocation);
     }
 

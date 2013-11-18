@@ -1,17 +1,20 @@
 package com.threedigital.weatherme;
 
 import android.app.WallpaperManager;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
 /**
  * Created by 3digital on 9/6/13.
  */
-public class MyData {
+public class MyData extends Drawable {
 
     private static Double mCurrentTemp;
     private static Double mWindSpeed;
     private static Double mPercipitation;
     private static String mTodaysStatus;
-    private static Object mIcon;
+    private static String mIcon;
     private WallpaperManager resources;
 
 
@@ -47,26 +50,40 @@ public class MyData {
         this.mTodaysStatus = mTodaysStatus;
     }
 
+    public static String getmIcon(){return mIcon;}
+
+    public void  setmIcon(String mIcon){this. mIcon = mIcon;}
 
 
 
-    public char[] setmTodaysStatus() {
-        return new char[0];
-    }
 
 
 
 
-    public void setmIcon(Object mIcon) {
-        this.mIcon = mIcon;
-    }
 
-    public Object getmIcon() {
-        return mIcon;
-    }
 
     public WallpaperManager getResources() {
         return resources;
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+
+    }
+
+    @Override
+    public void setAlpha(int alpha) {
+
+    }
+
+    @Override
+    public void setColorFilter(ColorFilter cf) {
+
+    }
+
+    @Override
+    public int getOpacity() {
+        return 0;
     }
 }
 

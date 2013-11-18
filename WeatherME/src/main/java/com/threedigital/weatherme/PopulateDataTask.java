@@ -1,5 +1,6 @@
 package com.threedigital.weatherme;
 
+import android.app.WallpaperManager;
 import android.location.Location;
 import android.os.AsyncTask;
 
@@ -14,7 +15,7 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 
 
- /**
+/**
  * Created by 3digital on 9/3/13.
  */
 public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer, MyData> {
@@ -26,12 +27,14 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
         //This is the constructor.
         super();
         myFriendDisplayWeatherActivity = activity;
-         UserLocationManager myFriendUserLocationManager = new UserLocationManager(this);
+         DisplayWeatherActivity myFriendDisplayActivity = null;
+         new UserLocationManager(myFriendDisplayActivity, this);
      }
 
 
      public void receiveUserLocation(Location location) {
-         ForecastAPIRequestObject thisAPIRequest = new ForecastAPIRequestObject(location);
+         WallpaperManager resources = null;
+         ForecastAPIRequestObject thisAPIRequest = new ForecastAPIRequestObject(location, resources);
          thisAPIRequest.setMyLocation(location);
          this.execute(thisAPIRequest);
 
@@ -55,9 +58,10 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
 
                 JSONObject rootJSON = new JSONObject(responseString);
                 JSONObject currentlyJSON = rootJSON.getJSONObject("currently");
-                Double windSpeed = currentlyJSON.getDouble("windSpeed");
+                currentlyJSON.getDouble("windSpeed");
 
-//                data.setmIcon(currentlyJSON.getJSONObject("icon"));
+
+                data.setmIcon(currentlyJSON.getString("icon"));
                 data.setmWindSpeed(currentlyJSON.getDouble("windSpeed"));
                 data.setmCurrentTemp(currentlyJSON.getDouble("temperature"));
                 data.setmPercipitation(currentlyJSON.getDouble("precipProbability"));
@@ -92,7 +96,8 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
     protected void onPostExecute(MyData data) {
         //get the result of doInBackground as a MyData object
         super.onPostExecute(data);
-        myFriendDisplayWeatherActivity.receiveWeatherData(data);
+        myFriendDisplayWeatherActivity.receiveWeatherData();
+
 
     }
 
@@ -103,8 +108,5 @@ public class PopulateDataTask extends AsyncTask<ForecastAPIRequestObject,Integer
      }
 
 
-     public MyData getData() {
-         return data;
-     }
  }
 

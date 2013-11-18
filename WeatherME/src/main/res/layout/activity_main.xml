@@ -1,3 +1,5 @@
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -21,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/TempImageView"
-        android:src="@drawable/overcast"
         android:layout_below="@+id/textClock"
         android:layout_alignParentLeft="true" />
 
@@ -40,8 +41,9 @@
         android:id="@+id/bikeButton"
         android:onClick="true"
         android:background="@drawable/auto"
-        android:layout_alignLeft="@+id/TempImageView"
-        android:layout_below="@+id/TempImageView" />
+        android:layout_below="@+id/TempView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="132dp" />
 
     <TextView
         android:layout_width="wrap_content"
