@@ -26,24 +26,14 @@
         android:layout_below="@+id/textClock"
         android:layout_alignParentLeft="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/cityView"
-        android:textColor="#000000"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/bikeButton"
         android:onClick="true"
         android:background="@drawable/auto"
-        android:layout_below="@+id/TempView"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="132dp" />
+        android:layout_below="@+id/TempImageView"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="wrap_content"

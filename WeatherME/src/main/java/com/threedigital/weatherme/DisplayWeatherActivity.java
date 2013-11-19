@@ -39,9 +39,7 @@ public class DisplayWeatherActivity extends Activity {
         setContentView(activity_main);
         goGetWeatherData();
 
-
         ActionBar bar = getActionBar();
-        assert bar != null;
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
 
 
@@ -64,35 +62,73 @@ public class DisplayWeatherActivity extends Activity {
         });
 
         }
-    public Drawable findmIcon(String s) {
+    public String findmIcon(String s) {
 
-        Drawable d;
 
-        if(s.equals("clear-night")) {
-            d = getResources().getDrawable(drawable.clear_night);
-        }else if(s.equals("rain")) {
-            d = getResources().getDrawable(drawable.rain);
-        }else if(s.equals("snow")) {
-            d = getResources().getDrawable(drawable.flurries);
-        }else if(s.equals("sleet")) {
-            d = getResources().getDrawable(drawable.sleet);
-        }else if(s.equals("wind")) {
-            d = getResources().getDrawable(drawable.windy);
-        }else if(s.equals("fog")) {
-            d = getResources().getDrawable(drawable.foggy);
-        }else if(s.equals("cloudy")) {
-            d = getResources().getDrawable(drawable.cloudy);
-        }else if(s.equals("partly-cloudy-day")) {
-            d = getResources().getDrawable(drawable.mostlycloudy);
-        }else if(s.equals("partly-cloudy-night")) {
-            d = getResources().getDrawable(drawable.partly_cloudy_night);
+        int icon = Integer.parseInt(s);
 
-        }else {
-            d = getResources().getDrawable(drawable.clear);
+
+
+        switch (icon){
+            case 1: s.equals("clear-night");
+                getResources().getDrawable(drawable.clear_night);
+                break;
+            case 2: s.equals("rain");
+                 getResources().getDrawable(drawable.rain);
+                break;
+            case 3: s.equals("snow");
+                getResources().getDrawable(drawable.flurries);
+                break;
+            case 4: s.equals("sleet");
+                getResources().getDrawable(drawable.sleet);
+                break;
+            case 5: s.equals("wind");
+                 getResources().getDrawable(drawable.windy);
+                break;
+            case 6: s.equals("fog");
+                getResources().getDrawable(drawable.foggy);
+                break;
+            case 7: s.equals("cloudy");
+                getResources().getDrawable(drawable.cloudy);
+                break;
+            case 8: s.equals("partly-cloudy-day");
+                getResources().getDrawable(drawable.mostlycloudy);
+                break;
+            case 9: s.equals("partly_cloudy_night");
+                getResources().getDrawable(drawable.partly_cloudy_night);
+                break;
+            default:break;
         }
 
-        return d;
+
+
+
+//        if(s.equals("clear-night")) {
+//            d = getResources().getDrawable(drawable.clear_night);
+//        }else if(s.equals("rain")) {
+//            d = getResources().getDrawable(drawable.rain);
+//        }else if(s.equals("snow")) {
+//            d = getResources().getDrawable(drawable.flurries);
+//        }else if(s.equals("sleet")) {
+//            d = getResources().getDrawable(drawable.sleet);x
+//        }else if(s.equals("wind")) {
+//            d = getResources().getDrawable(drawable.windy);
+//        }else if(s.equals("fog")) {
+//            d = getResources().getDrawable(drawable.foggy);
+//        }else if(s.equals("cloudy")) {
+//            d = getResources().getDrawable(drawable.cloudy);
+//        }else if(s.equals("partly-cloudy-day")) {
+//            d = getResources().getDrawable(drawable.mostlycloudy);
+//        }else if(s.equals("partly-cloudy-night")) {
+//            d = getResources().getDrawable(drawable.partly_cloudy_night);
+//
+//        }else {
+//            d = getResources().getDrawable(drawable.clear);
+//        }
+
+        return s;
     }
+
 
 
 
@@ -108,7 +144,8 @@ public class DisplayWeatherActivity extends Activity {
     public void receiveWeatherData() {
 
         ImageView imageView = (ImageView)findViewById(R.id.TempImageView);
-        imageView.setImageDrawable(findmIcon(String.valueOf(getmIcon())));
+        imageView.setImageDrawable(Drawable.createFromPath(findmIcon(String.valueOf(getmIcon()))));
+//        imageView.setImageDrawable(findmIcon(String.valueOf(getmIcon())));
 
         TextView textView = (TextView) findViewById(R.id.TempView);
         textView.setText(valueOf(Math.round(MyData.getmCurrentTemp()) + "\u00b0"));
